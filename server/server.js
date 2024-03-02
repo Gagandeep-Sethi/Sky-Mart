@@ -15,13 +15,11 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-
-
 app.get('/', (req, res) => {
     res.send("hi");
 });
 
-app.use('/api', productRouter);
+app.use('/api/product', productRouter);
 app.listen(5000, () => {
     console.log("Server started at port 5000");
 });

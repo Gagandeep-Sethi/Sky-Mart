@@ -1,22 +1,15 @@
-// ./routes/api.js
 const express = require('express');
+const { getAllProducts, createProduct, updateProduct, deleteProduct, getProductById } = require('../controllers/productController');
 const router = express.Router();
 
-router.get('/product', async(req, res) => {
-    
-    
-});
+router.get('/', getAllProducts);
 
-router.post('/product', (req, res) => {
-    res.send("Product added");
-});
+router.post('/',createProduct);
 
-router.put('/product', (req, res) => {
-    res.send("Product info updated");
-});
+router.put('/:id', updateProduct);
 
-router.delete('/product', (req, res) => {
-    res.send("Product deleted");
-});
+router.delete('/:id', deleteProduct);
+
+router.get('/:id',getProductById)
 
 module.exports = router;
