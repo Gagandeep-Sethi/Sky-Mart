@@ -3,10 +3,11 @@ const express = require('express');
 const app = express();
 const productRouter = require('./routes/api');
 const mongoose=require('mongoose')
+require('dotenv').config();
 
-const mongoDbUri="mongodb+srv://sky:test1234@cluster0.6fyzft3.mongodb.net/shoppingmart?retryWrites=true&w=majority"
 
-mongoose.connect(mongoDbUri,{ useNewUrlParser: true, useUnifiedTopology: true })
+
+mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true, useUnifiedTopology: true })
 
 const db = mongoose.connection;
 
