@@ -5,11 +5,34 @@ const jwt=require('jsonwebtoken')            //for token auth
 
 const createToken=(_id)=>{
     return jwt.sign({_id},process.env.SECRET,{expiresIn:'3d'})//to generate web token sign takes to arg id of user secret key that only server have with the help pf which server decodes the token and third we can pass the time that uptill when the token is valid and can be used in the browser
-}
+}                                                             // 1{is the token represents payload of token we wanna create },2{secret key},3{time etc.}
 
 
-exports.signIn = (req, res) => {
-    // Implement sign in logic
+exports.signIn = async(req, res) => {
+   const  {email,password}=req.body
+   try {
+    if(!email || !password){
+        throw new Error("All field must be filled")
+    }
+    const user =await User.findOne({email})
+    if(!user){
+        throw new Error("Email not found")
+    }
+    const match= await bcrypt.compare(password,user.password)
+    if(!match){
+        throw new Error("Incorrect password")
+    }
+    const token=createToken(user._id)
+    res.status(200).json({email,token})
+   } catch (error) {
+    if(error instanceof Error){
+        res.status(400).json({message:error.message})
+    }
+    else{
+        res.status(500).json({message:error.message})
+    }
+
+   }
 };
 
 exports.signUp = async (req, res) => {
@@ -38,7 +61,7 @@ exports.signUp = async (req, res) => {
             email,
             password: hashPassword
         });
-        const token=createToken(user._id)
+        const token=createToken(user._id)    //jwt contains 3 parts(header{contains the algo for used for jwt, payload{contains non sensitive user data},signature{used to verify token by the server}})
         res.status(200).json({email,token});
     } catch (error) {
         if (error instanceof Error) {                  //this line check if the error is the part of Error class that we have thrown 
