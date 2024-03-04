@@ -5,9 +5,7 @@ const productRouter = require('./routes/api');
 const userRouter=require('./routes/user')
 const mongoose=require('mongoose')
 require('dotenv').config();
-app.use(express.json());
-
-
+app.use(express.json());        //this middleware makes the json data available for the req.body
 
 mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -23,6 +21,6 @@ app.get('/', (req, res) => {
 });
 app.use('/api',userRouter)
 app.use('/api/product', productRouter);
-app.listen(5000, () => {
-    console.log("Server started at port 5000");
+app.listen(process.env.PORT, () => {
+    console.log("Server started ");
 });
