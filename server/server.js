@@ -1,7 +1,7 @@
 
 const express = require('express');
 const app = express();
-const productRouter = require('./routes/api');
+const productRouter = require('./routes/product');
 const userRouter=require('./routes/user')
 const mongoose=require('mongoose')
 require('dotenv').config();
@@ -19,7 +19,7 @@ db.once('open', () => {
 app.get('/', (req, res) => {
     res.send("hi");
 });
-app.use('/api',userRouter)
+app.use('/api/user',userRouter)
 app.use('/api/product', productRouter);
 app.listen(process.env.PORT, () => {
     console.log("Server started ");
