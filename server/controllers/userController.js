@@ -14,14 +14,17 @@ exports.signIn = async(req, res) => {
     if(!email || !password){
         throw new Error("All field must be filled")
     }
+
     const user =await User.findOne({email})
     if(!user){
         throw new Error("Email not found")
     }
+
     const match= await bcrypt.compare(password,user.password)
     if(!match){
         throw new Error("Incorrect password")
     }
+    
     const token=createToken(user._id)
     res.status(200).json({email,token})
    } catch (error) {
