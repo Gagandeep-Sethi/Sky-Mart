@@ -48,28 +48,28 @@ const Display = () => {
     <div className='flex w-2/3 justify-between rounded-full mt-14 bg-gradient-to-b from-red-800 to-black  '>
         <div className=" border-r-2 border-gray-400 flex items-center my-6 px-8 ">
             <img className='w-10 h-10' src={truck} alt=''/>
-            <div className=''>
+            <div className='ml-2'>
             <p className='text-white '>Free Shipping</p>
             <p className='text-white font-extralight text-sm'>Above ₹500</p>
             </div>
         </div>
         <div className=" border-r-2 border-gray-400  flex items-center my-6 px-8">
             <img className='w-10 h-10' src={box} alt=''/>
-            <div>
+            <div className='ml-2'>
             <p className='text-white'>Free Returns</p>
             <p className='text-white font-extralight text-sm'>Within 30 days</p>
             </div>
         </div>
         <div className=" border-r-2 border-gray-400  flex items-center my-6 px-8">
             <img className='w-10 h-10' src={secure} alt=''/>
-            <div>
+            <div className='ml-2'>
             <p className='text-white'>100% Secure</p>
             <p className='text-white font-extralight text-sm'>Payment online</p>
             </div>
         </div>
         <div className="  flex items-center my-6 px-8 ">
             <img className='w-10 h-10' src={price_tag} alt=''/>
-            <div>
+            <div className='ml-2'>
             <p className='text-white'>Best Price</p>
             <p className='text-white font-extralight text-sm'>Guaranteed</p>
             </div>
