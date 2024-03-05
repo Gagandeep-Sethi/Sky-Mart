@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*{jsx,js}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'shadows-into-light': ['Shadows Into Light', 'cursive']
+      }
+    },
   },
   plugins: [],
 }

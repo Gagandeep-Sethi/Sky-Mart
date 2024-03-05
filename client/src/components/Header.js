@@ -9,7 +9,7 @@ const Header = () => {
     
     
   return (
-    <div className='bg-gradient-to-t from-black to-blue-700 flex justify-around h-full '>
+    <div className='bg-gradient-to-t from-black to-red-700 flex justify-around h-full '>
 
       <div>
       <img className='w- h-full' src={logo} alt=""/>
