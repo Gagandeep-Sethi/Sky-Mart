@@ -15,7 +15,7 @@ const Display = () => {
   return (
     <div className='pt-10'>
     <div className='w-full h-full  flex bg-black'>
-        <div className='w-4/12  text-center  items-center justify-center flex' ><p className='bg-gradient-to-b from-customPurple to-white text-transparent bg-clip-text  font-shadows-into-light text-5xl font-semibold  '>Shopping    Simplified, Satisfaction Guaranteed</p>
+        <div className='w-4/12  text-center  items-center justify-center flex' ><p className='bg-gradient-to-br from-customPurple to-white text-transparent bg-clip-text  font-shadows-into-light text-5xl font-semibold  '>Shopping    Simplified, Satisfaction Guaranteed</p>
 </div>
     <div className='w-4/12 h-6/12  pt-24 pb-8  rounded-t-full bg-white ml-14'>
          <img src={ecom} alt=""/>
