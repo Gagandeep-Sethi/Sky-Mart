@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import logo from '../images/logo.png'
 import notification from '../images/notification.png'
 import userProfile from '../images/userProfile.png'
@@ -7,19 +7,11 @@ import heart from '../images/heart.png'
 import Search from './Search'
 const Header = () => {
   
-  const getData=async()=>{
-  const data =await fetch('/api/product')
-  const json= await data.json()
-  console.log(json)
-  }
-
-  useEffect(()=>{
-   getData()
-  },[])
+  
     
     
   return (
-    <div className='bg-gradient-to-t from-black to-red-700 flex justify-around h-full  '>
+    <div className='bg-gradient-to-b from-customPurple to-black  flex justify-around h-full  '>
 
       <div>
       <img className='w- h-full' src={logo} alt=""/>
@@ -48,7 +40,7 @@ const Header = () => {
 
       <div className='relative'>
       <img className='w-10 h-10 ml-12' src={userProfile} alt=""/>
-      <p className='text-white absolute left-[50%]  text-sm  bg-black px-2  rounded-full'>Login</p>
+      <p className='text-white absolute left-[50%]  text-sm  bg-black  px-2 py-1  rounded-full'>Login</p>
       </div>
 
       </div>
