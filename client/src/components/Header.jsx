@@ -33,7 +33,7 @@ const Header = () => {
 
       <div className='relative'>
       <Link to="/wishlist"><img className='w-10 h-8 ml-12' src={heart} alt=""/></Link>
-      <p className='text-white absolute left-[90%] bottom-[50%] text-sm  bg-black px-2  rounded-full'>{wishlist.length}</p>
+      <p className='text-white absolute left-[90%] bottom-[50%] text-sm  bg-black px-2  rounded-full'>{wishlist.reduce((acc,res)=>{return acc+res?.quantity},0)}</p>
       </div>
 
       <div className='relative'>
