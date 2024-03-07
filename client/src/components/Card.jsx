@@ -7,12 +7,12 @@ import PopUpMessage from '../utility/PopUpMessage'
 
 const Card = ({data}) => {
   const dispatch=useDispatch()
- const handleCart=()=>{dispatch(addToCart({data}))
+ const handleCart=()=>{dispatch(addToCart(data))
  setPopupMessage('Item added to cart');
     setShowPopup(true);
 }
 
- const handleWishlist=()=>{dispatch(addToWishlist({data}))
+ const handleWishlist=()=>{dispatch(addToWishlist(data))
  setPopupMessage('Item added to wishlist');
  setShowPopup(true);
 }
@@ -24,7 +24,7 @@ const Card = ({data}) => {
 
 
   return (
-    <div className='relative w-80 h-96   bg-gradient-to-br from-customPurple to-black pt-1  rounded-3xl font-exo transition  duration-200 transform hover:scale-105'>
+    <div className='relative w-72 h-96   bg-gradient-to-br from-customPurple to-black pt-1  rounded-3xl font-exo transition  duration-200 transform hover:scale-105'>
         
         <img className='h-[70%] w-[85%] mx-auto mt-3 block   rounded-3xl' src={data.image} alt="" />
         

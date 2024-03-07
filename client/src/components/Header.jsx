@@ -38,7 +38,7 @@ const Header = () => {
 
       <div className='relative'>
       <Link to="/cart"><img className='w-10 h-8 ml-12' src={cart} alt=""/></Link>
-      <p className='text-white absolute left-[90%] bottom-[50%] text-sm  bg-black px-2  rounded-full'>{carts.length}</p>
+      <p className='text-white absolute left-[90%] bottom-[50%] text-sm  bg-black px-2  rounded-full'>{carts.reduce((acc,res)=>{return acc+res.quantity},0)}</p>
       </div>
 
       <div className='relative'>
