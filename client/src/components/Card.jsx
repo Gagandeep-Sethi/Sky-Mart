@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cart from '../images/cart.png'
 import heart from '../images/heart.png'
 import { addToCart, addToWishlist } from '../utility/store/cartSlice'
 import { useDispatch } from 'react-redux'
+import PopUpMessage from '../utility/PopUpMessage'
 
 const Card = ({data}) => {
   const dispatch=useDispatch()
- const handleCart=()=>dispatch(addToCart({data}))
+ const handleCart=()=>{dispatch(addToCart({data}))
+ setPopupMessage('Item added to cart');
+    setShowPopup(true);
+}
 
- const handleWishlist=()=>dispatch(addToWishlist({data}))
+ const handleWishlist=()=>{dispatch(addToWishlist({data}))
+ setPopupMessage('Item added to wishlist');
+ setShowPopup(true);
+}
  
-
+ const [showPopup, setShowPopup] = useState(false);
+ const [popupMessage, setPopupMessage] = useState('');
 
 
 
@@ -30,6 +38,7 @@ const Card = ({data}) => {
     <p onClick={handleCart} className='bg-customPurple rounded-full cursor-pointer'><img className='w-6 m-2 ' src={cart} alt=''/></p>
     <p onClick={handleWishlist} className='bg-customPurple rounded-full cursor-pointer'><img className='w-6 m-2' src={heart} alt=''/></p>
   </div>
+  {showPopup && <PopUpMessage message={popupMessage} setShowPopup={setShowPopup} />}
 </div>
 
   )

@@ -6,7 +6,7 @@ const appStore=configureStore({
     reducer:{
         products:productReducer,
         user:userReducer,
-        cart:cartReducer
+        cart:cartReducer,
 
     }
 })
