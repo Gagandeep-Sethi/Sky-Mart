@@ -6,6 +6,12 @@ import Body from './components/Body';
 import Error from './components/Error';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import { Provider } from 'react-redux';
+import appStore from './utility/store/appStore';
+import WishList from './components/WishList';
+import Cart from './components/Cart';
+import Account from './components/Account';
+import  Notify  from './components/Notify';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const appRounter=createBrowserRouter([
@@ -26,6 +32,22 @@ const appRounter=createBrowserRouter([
       path:"/login",
       element:<Login/>
       
+    },
+    {
+      path:"/wishlist",
+      element:<WishList/>
+    },
+    {
+      path:"/cart",
+      element:<Cart/>
+    },
+    {
+      path:"/account",
+      element:<Account/>
+    },
+    {
+      path:'/notification',
+      element:<Notify/>
     }
 
   ],
@@ -35,7 +57,9 @@ const appRounter=createBrowserRouter([
 ])
 
 root.render(
+  <Provider store={appStore}>
   <RouterProvider router={appRounter}/>
+  </Provider>
 );
 
 
