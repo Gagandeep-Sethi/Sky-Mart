@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useLogin } from '../utility/hooks/useLogin';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const {login,isLoading,error}=useLogin()
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -16,9 +17,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission (e.g., send data to server)
-    console.log('Email:', email);
-    console.log('Password:', password);
+    login(email,password)
   };
 
   return (
@@ -35,8 +34,6 @@ const Login = () => {
             <div>
               
               <input
-                
-                name="email"
                 type="email"
                 autoComplete="email"
                 required
@@ -50,7 +47,6 @@ const Login = () => {
               
               <input
                 
-                name="password"
                 type="password"
                 autoComplete="current-password"
                 required
@@ -63,14 +59,13 @@ const Login = () => {
           </div>
           
           <div>
-            <button
+            <button disabled={isLoading}
               type="submit"
-              className="group mb-4 mt-12 w-full flex justify-center py-2 px-4  text-lg font-medium rounded-3xl text-white bg-indigo-600 hover:bg-indigo-700   "
-            >
-              
+              className="group mb-4 mt-12 w-full flex justify-center py-2 px-4  text-lg font-medium rounded-3xl text-white bg-indigo-600 hover:bg-indigo-700   ">
               Sign in
             </button>
           </div>
+          {error&&<div className='text-red-600 text-lg'>{error} !!</div>}
           <p className='text-white'>Don't have an account ?<Link className='text-customPurple' to='/signup'>Sign up</Link></p>
         </form>
       </div>
