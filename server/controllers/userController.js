@@ -26,7 +26,7 @@ exports.signIn = async(req, res) => {
     }
     
     const token=createToken(user._id)
-    res.status(200).json({email,token})
+    res.status(200).json({email,username:user.username,token})
    } catch (error) {
     if(error instanceof Error){
         res.status(400).json({message:error.message})
@@ -65,7 +65,7 @@ exports.signUp = async (req, res) => {
             password: hashPassword
         });
         const token=createToken(user._id)    //jwt contains 3 parts(header{contains the algo for used for jwt, payload{contains non sensitive user data},signature{used to verify token by the server}})
-        res.status(200).json({email,token});
+        res.status(200).json({email,username,token});
     } catch (error) {
         if (error instanceof Error) {                  //this line check if the error is the part of Error class that we have thrown 
             res.status(400).json({ message: error.message });
