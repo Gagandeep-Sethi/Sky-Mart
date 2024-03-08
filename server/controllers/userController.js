@@ -55,7 +55,7 @@ exports.signUp = async (req, res) => {
 
         const emailExist = await User.findOne({ email });
         if (emailExist) {
-            throw new Error( "Email exist" );
+            throw new Error( "Email already exist" );
         }
         const salt = await bcrypt.genSalt(10);               //gen salt is done suppose 2 users have same password so their hash code will also be same to with this gensalt that hash code will also be different for same password
         const hashPassword = await bcrypt.hash(password, salt);
