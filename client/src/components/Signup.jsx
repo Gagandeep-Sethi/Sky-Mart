@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSignup } from '../utility/hooks/useSignup';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username,setUsername]=useState('')
-
+  const {signUp,isLoading,error}=useSignup()
+console.log(error)
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -17,11 +19,10 @@ const Signup = () => {
     setUsername(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    // Handle form submission (e.g., send data to server)
-    console.log('Email:', email);
-    console.log('Password:', password);
+    await signUp(username,email,password)
+    
   };
 
   return (
@@ -78,14 +79,13 @@ const Signup = () => {
           </div>
           
           <div>
-            <button
+            <button disabled={isLoading}
               type="submit"
-              className="group mb-4 mt-12 w-full flex justify-center py-2 px-4  text-lg font-medium rounded-3xl text-white bg-indigo-600 hover:bg-indigo-700   "
-            >
-              
+              className="group mb-4 mt-12 w-full flex justify-center py-2 px-4  text-lg font-medium rounded-3xl text-white bg-indigo-600 hover:bg-indigo-700">
               Sign up
             </button>
           </div>
+          {error&&<div className='text-red-600 text-lg'>{error} !!</div>}
           <p className='text-white'>Arleady have an account ?<Link className='text-customPurple' to='/login'>Signin</Link></p>
         </form>
       </div>
