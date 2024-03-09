@@ -24,21 +24,21 @@ const Display = () => {
         <div className=' '>
         <div className='relative  pt-12 rounded-t-full bg-white pb-4 m-4 '>
             <img className='w-40 h-36' src={t_shirt} alt=''/>
-            <button className='bg-customPurple hover:bg-pink-400 transition ease-out duration-300 text-white rounded-3xl px-4 py-2 absolute left-[18%]'>Shop now</button>
+            <p className='bg-customPurple hover:bg-pink-400 transition ease-out duration-300 text-white rounded-3xl px-4 py-2 absolute left-[18%]'>Shop now</p>
         </div>
         <div className=' relative h-5/12 pt-12 rounded-t-full bg-white pb-4 m-4'>
             <img className='w-40 h-36' src={shoes} alt=''/>
-            <button className='bg-customPurple hover:bg-pink-400 transition ease-out duration-300 text-white rounded-3xl px-4 py-2 absolute left-[18%]'>Shop now</button>
+            <p className='bg-customPurple hover:bg-pink-400 transition ease-out duration-300 text-white rounded-3xl px-4 py-2 absolute left-[18%]'>Shop now</p>
         </div>
         </div>
         <div className=''>
         <div className='relative h-5/12 pt-12 rounded-t-full bg-white pb-4 m-4'>
             <img className='w-40 h-36' src={bag} alt=''/>
-            <button className='bg-customPurple hover:bg-pink-400 transition ease-out duration-300 text-white rounded-3xl px-4 py-2 absolute left-[18%]'>Shop now</button>
+            <p className='bg-customPurple hover:bg-pink-400 transition ease-out duration-300 text-white rounded-3xl px-4 py-2 absolute left-[18%]'>Shop now</p>
         </div>
         <div className='relative h-5/12 pt-12 rounded-t-full bg-white pb-4 m-4'>
             <img className='w-40 h-36' src={radio} alt=''/>
-            <button className='bg-customPurple hover:bg-pink-400 transition ease-out duration-300 text-white rounded-3xl px-4 py-2 absolute left-[18%]'>Shop now</button>
+            <p className='bg-customPurple hover:bg-pink-400 transition ease-out duration-300 text-white rounded-3xl px-4 py-2 absolute left-[18%]'>Shop now</p>
         </div>
         </div>
 

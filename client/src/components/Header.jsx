@@ -12,7 +12,7 @@ const Header = () => {
   
   const dispatch=useDispatch()
   const carts=useSelector(appStore=>appStore.cart.cart)
-  
+  const user=useSelector(appStore=>appStore.user.user)
   const wishlist=useSelector(appStore=>appStore.cart.wishlist)
     useEffect(()=>{
       const present=JSON.parse(localStorage.getItem('user'))
@@ -50,7 +50,7 @@ const Header = () => {
 
       <div className='relative'>
       <Link to="/account"><img className='w-10 h-10 ml-12' src={userProfile} alt=""/></Link>
-      <p className='text-white absolute left-[50%]  text-sm  bg-black  px-2 py-1  rounded-full'>Login</p>
+      <p className='text-white absolute left-[50%]  text-sm  bg-black  px-2 py-1  rounded-full'>{user? user?.username:"Login"}</p>
       </div>
 
       </div>
