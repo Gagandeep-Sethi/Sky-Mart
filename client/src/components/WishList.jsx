@@ -7,7 +7,7 @@ const WishList = () => {
     const wishlist=useSelector(appStore=>appStore?.cart?.wishlist)
     
   return (
-    <div className='bg-gray-100 h-full'>
+    <div className='bg-gray-100 min-h-screen'>
       
       <p className='text-center pt-14 text-4xl font-shadows-into-light font-bold pb-4 '>Wishlist</p>
       
