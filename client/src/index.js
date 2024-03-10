@@ -12,6 +12,7 @@ import WishList from './components/WishList';
 import Cart from './components/Cart';
 import Account from './components/Account';
 import  Notify  from './components/Notify';
+import Product from './components/Product';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const appRounter=createBrowserRouter([
@@ -48,6 +49,10 @@ const appRounter=createBrowserRouter([
     {
       path:'/notification',
       element:<Notify/>
+    },
+    {
+      path:'/product/:id',
+      element:<Product/>
     }
 
   ],

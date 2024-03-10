@@ -15,7 +15,6 @@ const MainContainer = () => {
     const womenWears=json?.filter(res=>res.category==="women's clothing")
     const electronics=json?.filter(res=>res.category==="electronics")
     const shoes=json?.filter(res=>res.category==="shoes")
-    console.log(json)
     dispatch(addMenWears(menWears))
     dispatch(addWomenwears(womenWears))
     dispatch(addShoes(shoes))

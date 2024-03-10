@@ -13,7 +13,7 @@ exports.getAllProducts=async(req,res)=>{
 
 exports.getProductById=async(req,res)=>{
     try {
-        const products=product.findById(req.param.id)
+        const products=await product.findById(req.params.id)
         if(!products){
             res.status(404).json({mesage:"Product not found"})
         }
