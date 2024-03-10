@@ -3,17 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 const productSlice=createSlice({
     name:"products",
     initialState:{
-        allProducts:null,
-        bag:null,
+        
+        womenWears:null,
+        menWears:null,
         shoes:null,
         electronics:null
     },
     reducers:{
-        addProducts:(state,action)=>{
-            state.allProducts=action.payload
+        
+        addWomenwears:(state,action)=>{
+            state.womenWears=action.payload
         },
-        addBag:(state,action)=>{
-            state.bag=action.payload
+        addMenWears:(state,action)=>{
+            state.menWears=action.payload
         },
         addShoes:(state,action)=>{
             state.shoes=action.payload
@@ -25,4 +27,4 @@ const productSlice=createSlice({
 })
 
 export default productSlice.reducer
-export const {addProducts,addBag,addShoes,addElectronics}=productSlice.actions
+export const {addMenWears,addWomenwears,addShoes,addElectronics}=productSlice.actions
