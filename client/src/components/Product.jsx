@@ -61,7 +61,7 @@ const Product = () => {
      </div >
 
      <div className='flex justify-between mt-20'>
-     <Link to="/updateProduct/:id" className='bg-green-600 text-white py-1 px-2 rounded-3xl'><button>Update Product</button></Link>
+     <Link to={'/updateProduct/'+id} className='bg-green-600 text-white py-1 px-2 rounded-3xl'><button>Update Product</button></Link>
      <button onClick={()=>setDltConfirm(true)} className='bg-red-600 text-white py-1 px-2 rounded-3xl'>Delete Product</button>
      </div>
      {dltConfirm&&<div className='bg-gray-800 py-4 px-6 rounded-2xl'>
