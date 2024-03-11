@@ -61,7 +61,7 @@ const appRounter=createBrowserRouter([
       element:<UpdateProduct/>
     },
     {
-      path:'/createProduct/:id',
+      path:'/createProduct',
       element:<NewProduct/>
     }
 

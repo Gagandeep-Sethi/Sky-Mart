@@ -15,7 +15,7 @@ exports.signIn = async(req, res) => {
         throw new Error("All field must be filled")
     }
 
-    const user =await User.findOne({email})
+    const user =await User.findOne({email:email.toLowerCase()})
     if(!user){
         throw new Error("Email not found")
     }
@@ -61,7 +61,7 @@ exports.signUp = async (req, res) => {
         const hashPassword = await bcrypt.hash(password, salt);
         const user = await User.create({
             username,
-            email,
+            email:email.toLowerCase(),
             password: hashPassword
         });
         const token=createToken(user._id)    //jwt contains 3 parts(header{contains the algo for used for jwt, payload{contains non sensitive user data},signature{used to verify token by the server}})

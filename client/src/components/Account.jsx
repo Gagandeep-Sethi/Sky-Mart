@@ -30,6 +30,12 @@ const Account = () => {
         Shop Now
       </p></Link>
         </div>
+
+        <div className='flex justify-center mt-10'>
+          <Link to="/createProduct"><button  className=' cursor-pointer bg-green-600 hover:bg-green-700 transition ease-out duration-300 text-white rounded-3xl px-4 py-2'>Add Product</button></Link>
+ 
+        </div>
+
         <div className='flex justify-center mt-10 rounded-2xl'>
         {!showConfirmation&&<p onClick={() => setShowConfirmation(true)} className='cursor-pointer bg-customPurple hover:bg-pink-400 transition ease-out duration-300 text-white rounded-3xl px-4 py-2 '>Logout</p>}
         {showConfirmation && (
