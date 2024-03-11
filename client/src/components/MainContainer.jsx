@@ -9,7 +9,8 @@ const MainContainer = () => {
   
 
   const getData=async()=>{
-    const data =await fetch('http://localhost:5000/api/product')
+    try {
+      const data =await fetch('http://localhost:5000/api/product')
     const json= await data.json()
     const menWears=json?.filter(res=>res.category==="men's clothing")
     const womenWears=json?.filter(res=>res.category==="women's clothing")
@@ -19,6 +20,11 @@ const MainContainer = () => {
     dispatch(addWomenwears(womenWears))
     dispatch(addShoes(shoes))
     dispatch(addElectronics(electronics))
+      
+    } catch (error) {
+      console.log(error)
+    }
+    
     }
   
     useEffect(()=>{

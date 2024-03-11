@@ -4,9 +4,9 @@ const product=require('../models/Product')
 exports.getAllProducts=async(req,res)=>{
     try {
         const products= await product.find()
-        res.json(products)
+        return res.json(products)
     } catch (error) {
-        res.status(500).json({message:error.message})
+        return res.status(500).json({message:error.message})
     }
 
 }
@@ -15,11 +15,11 @@ exports.getProductById=async(req,res)=>{
     try {
         const products=await product.findById(req.params.id)
         if(!products){
-            res.status(404).json({mesage:"Product not found"})
+            return res.status(404).json({mesage:"Product not found"})
         }
-        res.json(products)
+        return res.json(products)
     } catch (error) {
-        res.status(500).json({message:error.mesage})
+        return res.status(500).json({message:error.mesage})
     }
 
 }
@@ -33,36 +33,36 @@ exports.createProduct=async(req,res)=>{
         image:req.body.image
     })
     try {
-        const newProduct=products.save()
-        res.status(201).json(newProduct)
+        const newProduct=await products.save()
+        return res.status(201).json(newProduct)
         
     } catch (error) {
-        req.status(500).json({message:error.message})
+        return res.status(500).json({message:error.message})
     }
 }
 
 exports.updateProduct=async(req,res)=>{
     
     try {
-        const products=await product.findByIdAndUpdate(req.param.id,req.body,{new:true})
+        const products=await product.findByIdAndUpdate(req.params.id,req.body,{new:true})
         if(!products){
-            res.status(404).json({message:"Product not found"})
+            returnres.status(404).json({message:"Product not found"})
         }
-        res.json({message:"Product updated "})
+        return res.json({message:"Product updated "})
     } catch (error) {
-        res.status(500).json({message:error.mesage})
+        return res.status(500).json({message:error.mesage})
     }
 }
 
-exports.deleteProduct=async()=>{
+exports.deleteProduct=async(req,res)=>{
     try{
-        const products= product.findByIdAndDelete(req.param.id)
+        const products=await product.findByIdAndDelete(req.params.id)
         if(!products){
-            res.status(404).json({message:"Product not found"})
+           return res.status(404).json({message:"Product not found"})
         }
-        res.json({message:"Product deleted"})
+        return res.json({message:"Product deleted"})
     }catch(error){
-        res.status(500).json({message:error.message})
+        return res.status(500).json({message:error.message})
     }
     
 }
