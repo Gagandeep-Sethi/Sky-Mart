@@ -2,17 +2,6 @@ import './App.css';
  import Footer from './components/Footer';
 import Header from './components/Header';
 import { Outlet } from 'react-router-dom';
-// function App() {
-//   return (
-//     <div className="App h-screen w-screen">
-//       <div className='h-[10%] w-full ' ><Header/></div>
-//       <div className=' w-full  '><Outlet/></div>
-//       <div><Footer/></div>
-//     </div>
-//   );
-// }
-
-// export default App;
 
 
   
@@ -64,8 +53,8 @@ const AppContainer = () => {
         { path: '/account', element: <Account /> },
         { path: '/notification', element: <Notify /> },
         { path: '/product/:id', element: <Product /> },
-        { path: '/updateProduct/:id', element: <UpdateProduct /> },
-        { path: '/createProduct', element: <NewProduct /> },
+        { path: '/updateProduct/:id', element:user&& user.role==="admin"?  <UpdateProduct />:<Navigate to='/'/> },
+        { path: '/createProduct', element:user&& user.role==="admin"?  <NewProduct />:<Navigate to='/'/> },
         { path: '/payment', element: <Payment /> },
         { path: '/category/:type', element: <Category /> }
       ],

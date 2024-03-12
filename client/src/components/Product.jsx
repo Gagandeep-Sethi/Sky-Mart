@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 
 const Product = () => {
     const {id}=useParams()
     const [product,setProduct]=useState(null)
     const [dltConfirm ,setDltConfirm]=useState(false)
-
+    const user=useSelector(appStore=>appStore?.user?.user)
+    console.log(user)
    const deleteProduct=async()=>{
     try {
       const data=await fetch(`http://localhost:5000/api/product/${id}`,{method:'DELETE'})
@@ -60,10 +62,10 @@ const Product = () => {
         
      </div >
 
-     <div className='flex justify-between mt-20'>
+     {user&&user.role==="admin"?<div className='flex justify-between mt-20'>
      <Link to={'/updateProduct/'+id} className='bg-green-600 text-white py-1 px-2 rounded-3xl'><button>Update Product</button></Link>
      <button onClick={()=>setDltConfirm(true)} className='bg-red-600 text-white py-1 px-2 rounded-3xl'>Delete Product</button>
-     </div>
+     </div>:null}
      {dltConfirm&&<div className='bg-gray-800 py-4 px-6 rounded-2xl'>
           <p>Are you sure you want to delete product?</p>
           <div className='flex justify-center mt-6'>
