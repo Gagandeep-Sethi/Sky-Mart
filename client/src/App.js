@@ -34,6 +34,7 @@ import Product from './components/Product';
 import UpdateProduct from './components/UpdateProduct';
 import NewProduct from './components/NewProduct';
 import Payment from './components/Payment';
+import Category from './components/Category';
 
 const  App=()=>{
   return (
@@ -65,7 +66,8 @@ const AppContainer = () => {
         { path: '/product/:id', element: <Product /> },
         { path: '/updateProduct/:id', element: <UpdateProduct /> },
         { path: '/createProduct', element: <NewProduct /> },
-        { path: '/payment', element: <Payment /> }
+        { path: '/payment', element: <Payment /> },
+        { path: '/category/:type', element: <Category /> }
       ],
       errorElement: <Error />
     }

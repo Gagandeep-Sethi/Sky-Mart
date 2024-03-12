@@ -14,6 +14,7 @@
 // export default Search
 
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Search = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -37,10 +38,12 @@ const Search = () => {
     setSelectedOption(option);
     setShowDropdown(false);
   };
+  
+  
 
   return (
     <div className='w-full'>
-      <form className=" w-full flex" onSubmit={(e)=>e.preventDefault()}>
+      <div className=" w-full flex" >
         <div className="relative w-full" ref={dropdownRef}>
           <input
             className='ml-10 w-[90%] rounded-xl px-4 py-2 font-semibold'
@@ -54,13 +57,13 @@ const Search = () => {
             <div className="absolute bg-white rounded-xl shadow-md ml-10 mt-1 w-[90%]">
               <div
                 className="py-2 px-4 cursor-pointer hover:bg-gray-100"
-                onClick={() => handleOptionClick("men's clothing")}
+                onClick={() => handleOptionClick("menWears")}
               >
                 Men's Clothing
               </div>
               <div
                 className="py-2 px-4 cursor-pointer hover:bg-gray-100"
-                onClick={() => handleOptionClick("women's clothing")}
+                onClick={() => handleOptionClick("womenWears")}
               >
                 Women's Clothing
               </div>
@@ -79,8 +82,8 @@ const Search = () => {
             </div>
           )}
         </div>
-        <button className='bg-white py-2 px-4 rounded-xl  font-bold' type='submit'>Search</button>
-      </form>
+        <Link to={'/category/'+selectedOption}><button className='bg-white py-2 px-4 rounded-xl  font-bold' type='submit'>Search</button></Link>
+      </div>
     </div>
   );
 };
