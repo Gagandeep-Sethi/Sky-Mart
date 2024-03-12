@@ -18,7 +18,7 @@ const handleCart=()=>{dispatch(addToCart(data))
  }
 
   return (
-    <div className='w-8/12 mt-8 bg-customPurple rounded-2xl text-white ml-4'>
+    <div className='w-10/12 xl:w-8/12 mt-8 bg-customPurple rounded-2xl text-white ml-4'>
     <div className='grid  grid-cols-12 w-full h-[300px] py-4'>
         <div className='col-span-3  h-[270px] mx-5  '>
         <Link to={"/product/"+data?._id}><img className=' h-full w-full block rounded-2xl' src={data.image} alt="" /></Link>

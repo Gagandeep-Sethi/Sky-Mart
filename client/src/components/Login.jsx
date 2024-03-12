@@ -22,8 +22,8 @@ const Login = () => {
 
   return (
     
-    <div className="h-screen flex items-center justify-center bg-gradient-to-t from-customPurple to-black py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="h-screen flex xl:items-center justify-center bg-gradient-to-t from-customPurple to-black pt-64 xl:py-12 px-4 sm:px-6 lg:px-8">
+      <div className="xl:max-w-md max-w-3xl w-full space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-white">Sign in </h2>
         </div>

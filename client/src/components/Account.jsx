@@ -18,7 +18,7 @@ const Account = () => {
   return (
     <div>{!user?<Login/>:
       <div className='bg-gray-100 min-h-screen'>
-        <p className='text-6xl text-center pt-10 font-shadows-into-light'>Hi , {user?.username}</p>
+        <p className='text-6xl text-center pt-[20%] xl:pt-10 font-shadows-into-light'>Hi , {user?.username}</p>
         <div className='bg-customPurple mx-72 rounded-3xl mt-14' >
           <p className='text-center text-3xl text-white text-exo pt-4  '>Track Orders</p>
           <p className='text-center py-10 text-xl '>OOPs !!! no orders to track right now</p>

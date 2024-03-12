@@ -8,10 +8,10 @@ const [showPopup, setShowPopup] = useState(false);
 
   
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-96">
+    <div className="  xl:items-center   pt-64 xl:py-12 px-4 sm:px-6 lg:px-8 flex justify-center pb-96 xl:pb-0  xl:h-screen bg-gradient-to-t from-customPurple to-black">
+      <div className="bg-white p-8 rounded shadow-md  xl:max-w-md max-w-3xl w-full space-y-8">
         <h1 className="text-2xl font-bold mb-4">Address & Payment Details</h1>
-        <form>
+        <form className='mt-8 space-y-6 bg-gray-400 p-8 rounded-3xl'>
         <div className="mb-4">
             <label for="address" className="block text-sm font-medium text-gray-700">
               Address

@@ -24,7 +24,7 @@ const Header = () => {
     <div className='bg-gradient-to-b from-customPurple to-black  flex justify-around h-full  '>
 
       <div>
-      <Link to="/"><img className='w- h-full' src={logo} alt=""/></Link>
+      <Link to="/"><img className=' h-2/3 xl:h-full mt-6 xl:mt-1 ' src={logo} alt=""/></Link>
       </div>
       
       <div className='w-1/2 flex items-center'>

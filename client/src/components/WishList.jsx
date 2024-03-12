@@ -16,7 +16,7 @@ const WishList = () => {
       <Link to="/"><button className="bg-customPurple  text-white font-bold py-2 px-4 rounded-lg hover:shadow-2xl  mt-20">
         Add Items
       </button></Link></div>:
-      <div className='w-screen flex '>{wishlist.map((res)=><div><WishlistItem key={res?._id}data={res} /></div>)}
+      <div className='w-screen pb-8 '>{wishlist.map((res)=><div ><WishlistItem key={res?._id}data={res} /></div>)}
       
       </div>
 

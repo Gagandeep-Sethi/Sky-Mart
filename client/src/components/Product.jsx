@@ -45,13 +45,13 @@ const Product = () => {
     getData()
     },[])
 
-    if(!product)return <p className='text-center font-exo mt-[20%] text-3xl min-h-screen'>OOPs!! product details not found .....</p>
+    if(!product)return <p className='text-center font-exo mt-[50%] xl:mt-[20%] text-5xl  xl:text-3xl min-h-screen'>OOPs!! product details not found .....</p>
   return (
-    <div className='min-h-screen flex'>
-        <div className='mt-24 h-2/3 w-5/12'>
+    <div className='min-h-screen flex '>
+        <div className='xl:mt-24 mt-[45%] h-2/3 w-5/12'>
      <img className='rounded-2xl ml-6' src={product?.image} alt=''/>
      </div>
-     <div className='ml-24 mt-24 text-white h-fit w-7/12 mr-6'>
+     <div className='ml-24 xl:mt-24 mt-[45%] text-white h-fit w-7/12 mr-6'>
 
      <div className='bg-customPurple rounded-2xl '>
 
