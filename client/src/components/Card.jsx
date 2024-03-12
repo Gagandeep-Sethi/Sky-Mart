@@ -25,10 +25,10 @@ const Card = ({data}) => {
 
 
   return (
-    <Link to={"/product/"+data?._id}>
+    
     <div className='relative w-72 h-96   bg-gradient-to-br from-customPurple to-black pt-1  rounded-3xl font-exo transition  duration-200 transform hover:scale-105'>
         
-        <img className='h-[70%] w-[85%] mx-auto mt-3 block   rounded-3xl' src={data.image} alt="" />
+        <Link to={"/product/"+data?._id}><img className='h-[70%] w-[85%] mx-auto mt-3 block   rounded-3xl' src={data.image} alt="" /></Link>
         
   <div className='mt-2 flex mx-4 justify-between'>
   <p className='text-white     '>{data?.rating?.rate}⭐️</p>
@@ -41,7 +41,7 @@ const Card = ({data}) => {
     <p onClick={handleWishlist} className='bg-customPurple rounded-full cursor-pointer'><img className='w-6 m-2' src={heart} alt=''/></p>
   </div>
   {showPopup && <PopUpMessage message={popupMessage} setShowPopup={setShowPopup} />}
-</div></Link>
+</div>
 
   )
 }

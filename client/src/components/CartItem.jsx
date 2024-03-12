@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addToCart, removeFromCart } from '../utility/store/cartSlice'
+import { Link } from 'react-router-dom'
 
 
 const CartItem = ({data}) => {
@@ -20,7 +21,7 @@ const handleSub=()=>{
     <div className='w-full mt-8 bg-customPurple rounded-2xl text-white ml-4'>
     <div className='grid  grid-cols-12 w-full h-[300px] py-4'>
         <div className='col-span-3  h-[270px] mx-5  '>
-        <img className=' h-full w-full block rounded-2xl' src={data.image} alt="" />
+        <Link to={"/product/"+data?._id}><img className=' h-full w-full block rounded-2xl' src={data.image} alt="" /></Link>
         </div>
         <div className='col-span-9'>
           <p className='text-2xl font-exo border-b-2 border-white w-fit'>{data?.title}</p>

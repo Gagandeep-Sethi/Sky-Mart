@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { addToCart} from '../utility/store/cartSlice'
 import PopUpMessage from '../utility/PopUpMessage'
 import cart from '../images/cart.png'
+import { Link } from 'react-router-dom'
 
 const WishlistItem = ({data}) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -20,7 +21,7 @@ const handleCart=()=>{dispatch(addToCart(data))
     <div className='w-8/12 mt-8 bg-customPurple rounded-2xl text-white ml-4'>
     <div className='grid  grid-cols-12 w-full h-[300px] py-4'>
         <div className='col-span-3  h-[270px] mx-5  '>
-        <img className=' h-full w-full block rounded-2xl' src={data.image} alt="" />
+        <Link to={"/product/"+data?._id}><img className=' h-full w-full block rounded-2xl' src={data.image} alt="" /></Link>
         </div>
         <div className='col-span-9'>
           <p className='text-2xl font-exo border-b-2 border-white w-fit'>{data?.title}</p>

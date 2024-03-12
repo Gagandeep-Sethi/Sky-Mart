@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Cart = () => {
     const cart=useSelector(appStore=>appStore?.cart?.cart)
+    const user=useSelector(appStore=>appStore?.user?.user)
     
 
   return (
@@ -20,7 +21,7 @@ const Cart = () => {
       <div className='w-3/12 h-96 mt-8 rounded-2xl bg-customPurple ml-10'>
          <p className='text-3xl mt-4 ml-4 font-exo text-white border-b-2 border-white text-center mr-4 '>Total Amount to Pay</p>
          <p className='text-white text-2xl font-mono text-center mt-8'>₹{cart.reduce((acc,res)=>{return acc+(res.price*res.quantity)},0)}</p>
-         <Link to="/login"><p className='text-white px-4 py-2 rounded-2xl bg-black text-center w-[80%] mt-10 ml-[10%] cursor-pointer '>Proceed to Pay</p></Link>
+         <Link to={!user?"/login":"/payment"}><p className='text-white px-4 py-2 rounded-2xl bg-black text-center w-[80%] mt-10 ml-[10%] cursor-pointer '>Proceed to Pay</p></Link>
          </div>
       
       </div>

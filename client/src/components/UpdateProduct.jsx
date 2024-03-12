@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useNewProduct } from '../utility/hooks/useNewProduct';
 import { useParams } from 'react-router-dom';
 import { useUpdateProduct } from '../utility/hooks/useUpdateProduct';
 
