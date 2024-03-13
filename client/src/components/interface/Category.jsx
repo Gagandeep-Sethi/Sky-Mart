@@ -7,7 +7,7 @@ const Category = () => {
     const {type}=useParams()
     const products = useSelector(appStore => appStore?.products);
     const category = products[type];
-    console.log(category)
+
   return (
     <div className='min-h-screen bg-customBlack'>
         <div className='overflow-x-auto flex w-full p-8   pt-[10%]  '>

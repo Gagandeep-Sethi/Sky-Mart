@@ -7,7 +7,7 @@ export const useUpdateProduct = () => {
     const updateProduct = async (title, category, description, image, price, id) => {
         setIsLoading(true)
         setError(null)
-        console.log(id)
+
         try {
             const response = await fetch(`http://localhost:5000/api/product/${id}`, {
                 method: 'PUT',
@@ -15,13 +15,13 @@ export const useUpdateProduct = () => {
                 body: JSON.stringify({ title, category, description, image, price })
             })
             const json = await response.json()
-            console.log(json.message)
+
             if (!response.ok) {
                 setIsLoading(false)
                 setError(json.message)
             }
             if (response.ok) {
-                console.log(response)
+
                 setIsLoading(false)
             }
         } catch (error) {

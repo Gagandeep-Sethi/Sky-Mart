@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { addToCart, removeFromCart } from '../utility/store/cartSlice'
+import { addToCart, removeFromCart } from '../../utility/store/cartSlice'
 import { Link } from 'react-router-dom'
 
 

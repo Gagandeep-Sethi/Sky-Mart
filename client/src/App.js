@@ -1,29 +1,25 @@
 import './App.css';
- import Footer from './components/Footer';
-import Header from './components/Header';
-import { Outlet } from 'react-router-dom';
-
-
-  
-
-import React from 'react';
-
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import Body from './components/Body';
-import Error from './components/Error';
-import Signup from './components/Signup';
-import Login from './components/Login';
 import { useSelector } from 'react-redux';
+import { Outlet } from 'react-router-dom';
+import React from 'react';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import Header from './components/interface/Header';
 
-import WishList from './components/WishList';
-import Cart from './components/Cart';
-import Account from './components/Account';
-import Notify from './components/Notify';
-import Product from './components/Product';
-import UpdateProduct from './components/UpdateProduct';
-import NewProduct from './components/NewProduct';
-import Payment from './components/Payment';
-import Category from './components/Category';
+import Footer from './components/interface/Footer';
+ import Body from './components/interface/Body';
+import Error from './components/interface/Error';
+import Signup from './components/user/Signup';
+import Login from './components/user/Login';
+
+import WishList from './components/interface/WishList';
+import Cart from './components/interface/Cart';
+import Account from './components/interface/Account';
+import Notify from './components/interface/Notify';
+import Product from './components/interface/Product';
+import UpdateProduct from './components/product/UpdateProduct';
+import NewProduct from './components/product/NewProduct';
+import Payment from './components/interface/Payment';
+import Category from './components/interface/Category';
 
 const  App=()=>{
   return (

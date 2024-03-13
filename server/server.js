@@ -11,21 +11,17 @@ mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true, useUnifiedTopo
 
 const db = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB');
-})
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', () => {
+//   console.log('Connected to MongoDB');
+// })
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
-app.get('/', (req, res) => {
-    res.send("hi");
-});
+
 app.use('/api/user',userRouter)
 app.use('/api/product', productRouter);
-app.listen(process.env.PORT, () => {
-    console.log("Server started ");
-});
+app.listen(process.env.PORT);

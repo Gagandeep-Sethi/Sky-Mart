@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
-import logo from '../images/logo.png'
-import notification from '../images/notification.png'
-import userProfile from '../images/userProfile.png'
-import cart from '../images/cart.png'
-import heart from '../images/heart.png'
+import logo from '../../images/logo.png'
+import notification from '../../images/notification.png'
+import userProfile from '../../images/userProfile.png'
+import cart from '../../images/cart.png'
+import heart from '../../images/heart.png'
 import Search from './Search'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { addUser } from '../utility/store/userSlice'
+import { addUser } from '../../utility/store/userSlice'
 const Header = () => {
   
   const dispatch=useDispatch()
@@ -19,7 +19,7 @@ const Header = () => {
       if(present){
         dispatch(addUser(present))
       }
-    },[])
+    },[dispatch])
   return (
     <div className='bg-gradient-to-b from-customPurple to-black  flex justify-around h-full  '>
 

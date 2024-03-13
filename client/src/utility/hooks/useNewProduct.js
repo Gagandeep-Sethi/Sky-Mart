@@ -13,15 +13,13 @@ export const useNewProduct=()=>{
         body: JSON.stringify({ title, category, description, image, price })
     })
       const json=await response.json()
-     console.log(json.message)
+
       if(!response.ok){
         setIsLoading(false)
         setError(json.message)
       }
       if(response.ok){
-        console.log(response)
-        
-        
+
         setIsLoading(false)
       }
 

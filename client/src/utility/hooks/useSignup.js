@@ -16,7 +16,7 @@ export const useSignup=()=>{
         body:JSON.stringify({username,email,password})
       })
       const json=await response.json()
-     console.log(json.message)
+
       if(!response.ok){
         setIsLoading(false)
         setError(json.message)

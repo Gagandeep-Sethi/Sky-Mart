@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useSignup } from '../utility/hooks/useSignup';
 
+import {useSignup} from "../../utility/hooks/useSignup"
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username,setUsername]=useState('')
   const {signUp,isLoading,error}=useSignup()
-console.log(error)
+
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };

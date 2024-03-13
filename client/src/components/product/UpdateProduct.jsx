@@ -1,24 +1,54 @@
-import React, { useState } from 'react';
-import { useNewProduct } from '../utility/hooks/useNewProduct';
-
-const NewProduct = () => {
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+// import { useUpdateProduct } from '../../utility/hooks/useUpdateProduct';
+import {useUpdateProduct} from"../../utility/hooks/useUpdateProduct"
+const UpdateProduct = () => {
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
     const [image, setImage] = useState('');
     const [price, setPrice] = useState('');
-    const {addProduct,isLoading,error}=useNewProduct()
+    const {updateProduct,isLoading,error}=useUpdateProduct()
+    
+    const {id}=useParams()
 
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        await addProduct(title, category, description, image, price)
+        await updateProduct(title, category, description, image, price,id)
       }
+
+      const getData=async()=>{
+        try {
+            
+        const data = await fetch(`http://localhost:5000/api/product/${id}`)
+        
+        if (!data.ok) {
+            throw new Error("Failed to fetch product");
+        }
+        
+        const json = await data.json()
+        setTitle(json?.title)
+        setCategory(json?.category)
+        setDescription(json?.description)
+        setImage(json?.image)
+        setPrice(json?.price)
+        
+            
+        } catch (error) {
+            console.log(error)
+        }
+    
+    }
+    useEffect(()=>{
+    getData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
         
   
 
     return (
-        <div className=" h-screen flex xl:items-center justify-center bg-gradient-to-t from-customPurple to-black pt-64 xl:py-12 px-4 sm:px-6 lg:px-8">
+        <div className="h-screen flex xl:items-center justify-center bg-gradient-to-t from-customPurple to-black pt-64 xl:py-12 px-4 sm:px-6 lg:px-8">
             <div className="xl:max-w-md max-w-3xl w-full space-y-8">
                 <div>
                     <h2 className="mt-6 font-exo text-center text-4xl font-extrabold text-white">Add New Product</h2>
@@ -91,7 +121,7 @@ const NewProduct = () => {
                             type="submit"
                             className="group mb-4 mt-12 w-full flex justify-center py-2 px-4 text-lg font-medium rounded-3xl text-white bg-green-600 hover:bg-green-700"
                         >
-                            Add New Product
+                            Update Product
                         </button>
                     </div>
                     {error&&<div className='text-red-600 text-lg'>{error} !!</div>}
@@ -101,4 +131,4 @@ const NewProduct = () => {
     );
 };
 
-export default NewProduct;
+export default UpdateProduct;

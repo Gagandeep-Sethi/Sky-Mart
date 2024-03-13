@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import cart from '../images/cart.png'
-import heart from '../images/heart.png'
-import { addToCart, addToWishlist } from '../utility/store/cartSlice'
+import cart from '../../images/cart.png'
+import heart from '../../images/heart.png'
+import { addToCart, addToWishlist } from '../../utility/store/cartSlice'
 import { useDispatch } from 'react-redux'
-import PopUpMessage from '../utility/PopUpMessage'
+import PopUpMessage from '../../utility/PopUpMessage'
 import { Link } from 'react-router-dom'
 
 const Card = ({data}) => {
@@ -20,9 +20,6 @@ const Card = ({data}) => {
  
  const [showPopup, setShowPopup] = useState(false);
  const [popupMessage, setPopupMessage] = useState('');
-
-
-
 
   return (
     

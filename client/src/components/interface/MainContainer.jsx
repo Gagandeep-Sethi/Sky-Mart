@@ -1,35 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import CardContainer from './CardContainer'
-import { useDispatch, useSelector } from 'react-redux'
-import { addElectronics, addMenWears, addShoes, addWomenwears } from '../utility/store/productSlice'
+import {  useSelector } from 'react-redux'
 
+import useMainContainer from '../../utility/hooks/useMainContainer'
 const MainContainer = () => {
-  const dispatch=useDispatch()
+
   const products=useSelector(appStore=>appStore?.products)
   
-
-  const getData=async()=>{
-    try {
-      const data =await fetch('http://localhost:5000/api/product')
-    const json= await data.json()
-    const menWears=json?.filter(res=>res.category==="men's clothing")
-    const womenWears=json?.filter(res=>res.category==="women's clothing")
-    const electronics=json?.filter(res=>res.category==="electronics")
-    const shoes=json?.filter(res=>res.category==="shoes")
-    dispatch(addMenWears(menWears))
-    dispatch(addWomenwears(womenWears))
-    dispatch(addShoes(shoes))
-    dispatch(addElectronics(electronics))
-      
-    } catch (error) {
-      console.log(error)
-    }
-    
-    }
+  useMainContainer()
   
-    useEffect(()=>{
-     getData()
-    },[])
     if(!products.menWears)return null
      return (
     <div className='mt-24 w-full '>

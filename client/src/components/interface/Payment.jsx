@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PopUpMessage from '../utility/PopUpMessage';
+import PopUpMessage from '../../utility/PopUpMessage';
 
 const Payment = () => {
 

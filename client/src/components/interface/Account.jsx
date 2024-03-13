@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Login from './Login'
+import Login from '../user/Login'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { deleteUser } from '../utility/store/userSlice'
+import { deleteUser } from '../../utility/store/userSlice'
 
 const Account = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);

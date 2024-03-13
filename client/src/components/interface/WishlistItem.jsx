@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addToCart} from '../utility/store/cartSlice'
-import PopUpMessage from '../utility/PopUpMessage'
-import cart from '../images/cart.png'
+import { addToCart} from '../../utility/store/cartSlice'
+import PopUpMessage from '../../utility/PopUpMessage'
+import cart from '../../images/cart.png'
 import { Link } from 'react-router-dom'
 
 const WishlistItem = ({data}) => {

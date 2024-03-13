@@ -7,7 +7,7 @@ const Product = () => {
     const [product,setProduct]=useState(null)
     const [dltConfirm ,setDltConfirm]=useState(false)
     const user=useSelector(appStore=>appStore?.user?.user)
-    console.log(user)
+
    const deleteProduct=async()=>{
     try {
       const data=await fetch(`http://localhost:5000/api/product/${id}`,{method:'DELETE'})
@@ -43,6 +43,7 @@ const Product = () => {
     }
     useEffect(()=>{
     getData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     if(!product)return <p className='text-center font-exo mt-[50%] xl:mt-[20%] text-5xl  xl:text-3xl min-h-screen'>OOPs!! product details not found .....</p>
