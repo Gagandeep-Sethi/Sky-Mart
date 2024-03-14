@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Fetch_Uri } from "../constant"
 
 export const useUpdateProduct = () => {
     const [error, setError] = useState(null)
@@ -9,7 +10,7 @@ export const useUpdateProduct = () => {
         setError(null)
 
         try {
-            const response = await fetch(`http://localhost:5000/api/product/${id}`, {
+            const response = await fetch(`${Fetch_Uri}/api/product/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ title, category, description, image, price })
@@ -25,7 +26,7 @@ export const useUpdateProduct = () => {
                 setIsLoading(false)
             }
         } catch (error) {
-            console.error('Error updating product:', error)
+            
             setError('Error updating product. Please try again.')
             setIsLoading(false)
         }

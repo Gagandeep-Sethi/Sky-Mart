@@ -7,7 +7,7 @@ const cartSlice=createSlice({
 
     },
     reducers:{
-        addToCart:(state,action)=>{
+        addToCart:(state,action)=>{      //checking if the product is already added to cart if it is already it increases its quatity property by 1 rather then again adding it 
             
                 const newItem = action.payload;
                 const existingItem = state.cart.find(item => item._id === newItem._id);
@@ -24,7 +24,7 @@ const cartSlice=createSlice({
             
             
         },
-        removeFromCart:(state,action)=>{
+        removeFromCart:(state,action)=>{  //it check  how many item are their in cart and it reduces its quantity by 1
             const removeItem=action.payload
             const existingItem=state.cart.find(item=>item._id===removeItem)
             if(existingItem?.quantity===1){
@@ -37,7 +37,7 @@ const cartSlice=createSlice({
             }
             
         },
-        addToWishlist:(state,action)=>{
+        addToWishlist:(state,action)=>{       //same as cart
             const newItem=action.payload
             const existingItem=state.wishlist.find(item=>item._id===newItem._id)
             if(existingItem){

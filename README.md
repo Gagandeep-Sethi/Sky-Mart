@@ -5,8 +5,10 @@ SkyMart is a shopping web application built using the MERN (MongoDB, Express.js,
 - Product Catalog: Browse a wide range of products.
 - User Authentication: Sign up, log in, and log out to access and manage your account.
 - Shopping Cart: Add and remove items from your shopping cart.
+- Wishlist:Add and remove items from your shopping wishlist.
+- Products:Add and remove products from database(only admin can do that).
 - Order Management: View and manage your orders.
-- Search Functionality: Search for products by name or category.
+- Search Functionality: Search for products by  category.
 - Responsive Design: Enjoy a seamless shopping experience on any device.
 
 # Technologies Used

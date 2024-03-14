@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Fetch_Uri } from "../constant"
 
 export const useNewProduct=()=>{
  const [error,setError]=useState(null)
@@ -7,7 +8,7 @@ export const useNewProduct=()=>{
     const addProduct=async(title, category, description, image, price)=>{
         setIsLoading(true)
         setError(null)
-      const response=await fetch('http://localhost:5000/api/product',{
+      const response=await fetch(`${Fetch_Uri}/api/product`,{
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, category, description, image, price })

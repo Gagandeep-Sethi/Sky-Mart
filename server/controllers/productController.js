@@ -44,9 +44,9 @@ exports.createProduct=async(req,res)=>{
 exports.updateProduct=async(req,res)=>{
     
     try {
-        const products=await product.findByIdAndUpdate(req.params.id,req.body,{new:true})
+        const products=await product.findByIdAndUpdate(req.params.id,req.body,{new:true}) //new true will return the updated value rather then older value
         if(!products){
-            returnres.status(404).json({message:"Product not found"})
+            return res.status(404).json({message:"Product not found"})
         }
         return res.json({message:"Product updated "})
     } catch (error) {

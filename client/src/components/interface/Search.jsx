@@ -1,17 +1,3 @@
-// import React from 'react'
-
-// const Search = () => {
-//   return (
-//     <div className='w-full'>
-//         <form className=" w-full flex" onSubmit={(e)=>e.preventDefault()}>
-//             <input className='w-[80%] rounded-xl px-4 py-2 font-semibold' placeholder="Search..." type='text'></input>
-//             <button className='bg-white py-2 px-4 rounded-xl ml-2 font-bold' type='submit'>Search</button>
-//         </form>
-//     </div>
-//   )
-// }
-
-// export default Search
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
@@ -23,14 +9,14 @@ const Search = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {  //ref value is actually inside ref.current
         setShowDropdown(false);
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside); //this return prevents memory leaks and removes eventlistner when component unmount
     };
   }, []);
 

@@ -1,12 +1,13 @@
 import { useDispatch } from 'react-redux'
 import { addElectronics, addMenWears, addShoes, addWomenwears } from '../store/productSlice'
 import { useEffect } from 'react'
+import { Fetch_Uri } from '../constant'
 
 const useMainContainer = () => {
     const dispatch=useDispatch()
     const getData=async()=>{
         try {
-          const data =await fetch('http://localhost:5000/api/product')
+          const data =await fetch(`${Fetch_Uri}/api/product`)
         const json= await data.json()
 
         const menWears=json?.filter(res=>res.category==="men's clothing")

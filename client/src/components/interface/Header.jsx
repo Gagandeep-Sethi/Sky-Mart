@@ -15,7 +15,7 @@ const Header = () => {
   const user=useSelector(appStore=>appStore.user.user)
   const wishlist=useSelector(appStore=>appStore.cart.wishlist)
     useEffect(()=>{
-      const present=JSON.parse(localStorage.getItem('user'))
+      const present=JSON.parse(localStorage.getItem('user'))//it analyse localstorage if it contain user item and convert JSON in js obj
       if(present){
         dispatch(addUser(present))
       }

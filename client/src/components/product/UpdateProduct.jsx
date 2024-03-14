@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import { useUpdateProduct } from '../../utility/hooks/useUpdateProduct';
 import {useUpdateProduct} from"../../utility/hooks/useUpdateProduct"
+import { Fetch_Uri } from '../../utility/constant';
 const UpdateProduct = () => {
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
@@ -21,7 +22,7 @@ const UpdateProduct = () => {
       const getData=async()=>{
         try {
             
-        const data = await fetch(`http://localhost:5000/api/product/${id}`)
+        const data = await fetch(`${Fetch_Uri}/api/product/${id}`)
         
         if (!data.ok) {
             throw new Error("Failed to fetch product");

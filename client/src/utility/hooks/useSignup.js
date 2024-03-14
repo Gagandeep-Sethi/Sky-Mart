@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addUser } from "../store/userSlice"
+import { Fetch_Uri } from "../constant"
 
 export const useSignup=()=>{
  const [error,setError]=useState(null)
@@ -10,7 +11,7 @@ export const useSignup=()=>{
     const signUp=async(username,email,password)=>{
         setIsLoading(true)
         setError(null)
-      const response=await fetch('http://localhost:5000/api/user/signup',{
+      const response=await fetch(`${Fetch_Uri}/api/user/signup`,{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({username,email,password})

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
+import { Fetch_Uri } from '../../utility/constant'
 
 const Product = () => {
     const {id}=useParams()
@@ -10,7 +11,7 @@ const Product = () => {
 
    const deleteProduct=async()=>{
     try {
-      const data=await fetch(`http://localhost:5000/api/product/${id}`,{method:'DELETE'})
+      const data=await fetch(`${Fetch_Uri}/api/product/${id}`,{method:'DELETE'})
       if (data.ok) {
         
         setProduct(null)
@@ -27,7 +28,7 @@ const Product = () => {
     const getData=async()=>{
         try {
             
-        const data = await fetch(`http://localhost:5000/api/product/${id}`)
+        const data = await fetch(`${Fetch_Uri}/api/product/${id}`)
         
         if (!data.ok) {
             throw new Error("Failed to fetch product");

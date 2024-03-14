@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addUser } from "../store/userSlice"
+import { Fetch_Uri } from "../constant"
 
 export const useLogin=()=>{
  const [error,setError]=useState(null)
@@ -10,7 +11,7 @@ export const useLogin=()=>{
     const login=async(email,password)=>{
         setIsLoading(true)
         setError(null)
-      const response=await fetch('http://localhost:5000/api/user/signin',{
+      const response=await fetch(`${Fetch_Uri}/api/user/signin`,{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({email,password})
@@ -23,7 +24,7 @@ export const useLogin=()=>{
       }
       if(response.ok){
         
-        localStorage.setItem('user',JSON.stringify(json))
+        localStorage.setItem('user',JSON.stringify(json))//to store item in local storage of browser by name user
         dispatch(addUser(json))
         setIsLoading(false)
       }
