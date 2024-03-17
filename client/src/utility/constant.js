@@ -1,1 +1,1 @@
-export const Fetch_Uri="http://localhost:5000"
+export const Fetch_Uri="https://sky-mart-eight.vercel.app"
