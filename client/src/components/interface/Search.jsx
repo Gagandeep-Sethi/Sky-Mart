@@ -68,7 +68,7 @@ const Search = () => {
             </div>
           )}
         </div>
-        <Link to={'/category/'+selectedOption}><button className='bg-white  py-2 px-4 rounded-xl  font-bold' type='submit'>Search</button></Link>
+        <Link to={'/category/'+selectedOption}><button disabled={!selectedOption} className='bg-white  py-2 px-4 rounded-xl  font-bold' type='submit'>Search</button></Link>
       </div>
     </div>
   );
