@@ -21,7 +21,9 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
-
+app.get('/',(req,res)=>{
+  res.send("hi")
+})
 app.use('/api/user',userRouter)
 app.use('/api/product', productRouter);
 app.listen(process.env.PORT);
