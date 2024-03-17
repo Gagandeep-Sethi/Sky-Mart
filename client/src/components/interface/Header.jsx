@@ -21,10 +21,10 @@ const Header = () => {
       }
     },[dispatch])
   return (
-    <div className='bg-gradient-to-b from-customPurple to-black  flex justify-around h-full  '>
+    <div className='bg-gradient-to-b from-customPurple to-black  flex justify-between h-full  '>
 
       <div>
-      <Link to="/"><img className=' h-2/3 xl:h-full mt-6 xl:mt-1 ' src={logo} alt=""/></Link>
+      <Link to="/"><img className=' h-2/3 xl:h-full mt-6 xl:mt-1 w-28 xl:w-24 mb-2 ' src={logo} alt=""/></Link>
       </div>
       
       <div className='w-1/2 flex items-center'>
@@ -33,24 +33,24 @@ const Header = () => {
 
       <div className='flex justify-between items-center'>
 
-        <div className='relative'>
-      <Link to="/notification"><img className='w-10 h-8 ml-12' src={notification} alt=""/></Link>
+        <div className='relative ml-4'>
+      <Link to="/notification"><img className='w-10 h-8 ' src={notification} alt=""/></Link>
       <p className='text-white absolute left-[90%] bottom-[50%] text-sm  bg-black px-2  rounded-full'>0</p>
       </div>
 
-      <div className='relative'>
-      <Link to="/wishlist"><img className='w-10 h-8 ml-12' src={heart} alt=""/></Link>
+      <div className='relative ml-10'>
+      <Link to="/wishlist"><img className='w-10 h-8 ' src={heart} alt=""/></Link>
       <p className='text-white absolute left-[90%] bottom-[50%] text-sm  bg-black px-2  rounded-full'>{wishlist.reduce((acc,res)=>{return acc+res?.quantity},0)}</p>
       </div>
 
-      <div className='relative'>
-      <Link to="/cart"><img className='w-10 h-8 ml-12' src={cart} alt=""/></Link>
+      <div className='relative ml-12'>
+      <Link to="/cart"><img className='w-10 h-8 ' src={cart} alt=""/></Link>
       <p className='text-white absolute left-[90%] bottom-[50%] text-sm  bg-black px-2  rounded-full'>{carts.reduce((acc,res)=>{return acc+res.quantity},0)}</p>
       </div>
 
-      <div className='relative'>
-      <Link to="/account"><img className='w-10 h-10 ml-12' src={userProfile} alt=""/></Link>
-      <p className='text-white absolute left-[50%]  text-sm  bg-black  px-2 py-1  rounded-full'>{user? user?.username:"Login"}</p>
+      <div className='relative ml-10'>
+      <Link to="/account"><img className='w-10 h-10 ' src={userProfile} alt=""/></Link>
+      <p className='text-white absolute -left-2  text-sm  bg-black  px-2 py-1  rounded-full'>{user? user?.username:"Login"}</p>
       </div>
 
       </div>

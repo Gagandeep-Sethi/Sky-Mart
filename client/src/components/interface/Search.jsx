@@ -29,10 +29,10 @@ const Search = () => {
 
   return (
     <div className='w-full'>
-      <div className=" w-full flex" >
+      <div className=" w-full flex justify-center" >
         <div className="relative w-full" ref={dropdownRef}>
           <input
-            className='ml-10 w-[90%] rounded-xl px-4 py-2 font-semibold'
+            className=' w-[90%] rounded-xl px-4 py-2 font-semibold'
             placeholder="Search..."
             type='text'
             onFocus={() => setShowDropdown(true)}
@@ -40,7 +40,7 @@ const Search = () => {
             readOnly
           />
           {showDropdown && (
-            <div className="absolute bg-white rounded-xl shadow-md ml-10 mt-1 w-[90%]">
+            <div className="absolute bg-white rounded-xl shadow-md  mt-1 w-[90%]">
               <div
                 className="py-2 px-4 cursor-pointer hover:bg-gray-100"
                 onClick={() => handleOptionClick("menWears")}
@@ -68,7 +68,7 @@ const Search = () => {
             </div>
           )}
         </div>
-        <Link to={'/category/'+selectedOption}><button className='bg-white ml-4 xl:ml-0 py-2 px-4 rounded-xl  font-bold' type='submit'>Search</button></Link>
+        <Link to={'/category/'+selectedOption}><button className='bg-white  py-2 px-4 rounded-xl  font-bold' type='submit'>Search</button></Link>
       </div>
     </div>
   );
