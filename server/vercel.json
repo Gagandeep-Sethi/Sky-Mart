@@ -2,28 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.js",
+      "src": "./server.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    {
-      "src": "/api/product",
-      "dest": "/routes/product.js"
-    },
-    {
-      "src": "/api/product/:id",
-      "dest": "/routes/product.js"
-    },
-    {
-      "src": "/api/user/signin",
-      "dest": "/routes/user.js"
-    },
-    {
-      "src": "/api/user/signup",
-      "dest": "/routes/user.js"
-    },
+    
     {
       "src": "/(.*)",
       "dest": "/server.js"
