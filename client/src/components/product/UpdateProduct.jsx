@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// import { useUpdateProduct } from '../../utility/hooks/useUpdateProduct';
+import { useNavigate } from 'react-router-dom';
+
 import {useUpdateProduct} from"../../utility/hooks/useUpdateProduct"
 import { Fetch_Uri } from '../../utility/constant';
 const UpdateProduct = () => {
+    const navigate=useNavigate()
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
@@ -17,6 +19,7 @@ const UpdateProduct = () => {
     const handleSubmit = async(e) => {
         e.preventDefault();
         await updateProduct(title, category, description, image, price,id)
+        navigate('/')
       }
 
       const getData=async()=>{

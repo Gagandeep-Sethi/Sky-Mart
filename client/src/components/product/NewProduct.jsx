@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNewProduct } from '../../utility/hooks/useNewProduct';
+import { useNavigate } from 'react-router-dom';
 
 const NewProduct = () => {
     const [title, setTitle] = useState('');
@@ -8,11 +9,14 @@ const NewProduct = () => {
     const [image, setImage] = useState('');
     const [price, setPrice] = useState('');
     const {addProduct,isLoading,error}=useNewProduct()
-
+    
+    const navigate=useNavigate()
 
     const handleSubmit = async(e) => {
+        
         e.preventDefault();
         await addProduct(title, category, description, image, price)
+        navigate('/')
       }
         
   
