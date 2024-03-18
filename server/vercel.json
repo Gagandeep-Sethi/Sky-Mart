@@ -9,11 +9,19 @@
   "routes": [
     { "handle": "filesystem" },
     {
-      "src": "/api/product/(.*)",
+      "src": "/api/product",
       "dest": "/routes/product.js"
     },
     {
-      "src": "/api/user/(.*)",
+      "src": "/api/product/:id",
+      "dest": "/routes/product.js"
+    },
+    {
+      "src": "/api/user/signin",
+      "dest": "/routes/user.js"
+    },
+    {
+      "src": "/api/user/signup",
       "dest": "/routes/user.js"
     },
     {
