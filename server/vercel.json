@@ -1,25 +1,27 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "server.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      { "handle": "filesystem" },
-      {
-        "src": "/api/product/(.*)",
-        "dest": "/routes/product.js"
-      },
-      {
-        "src": "/api/user/(.*)",
-        "dest": "/routes/user.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/server.js"
-      }
-    ]
-  }
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/api/product/(.*)",
+      "dest": "./routes/product.js"
+    },
+    {
+      "src": "/api/user/(.*)",
+      "dest": "./routes/user.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "./server.js"
+    }
+  ]
+}
   
+
+    
